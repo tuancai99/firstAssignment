@@ -1,10 +1,3 @@
-//
-//  MessageField.swift
-//  ChatApp
-//
-//  Created by Stephanie Diep on 2022-01-11.
-//
-
 import SwiftUI
 
 struct MessageField: View {
@@ -13,8 +6,7 @@ struct MessageField: View {
 
     var body: some View {
         HStack {
-            // Custom text field created below
-            CustomTextField(placeholder: Text("Enter your message here"), text: $message)
+            CustomTextField(placeholder: Text("Enter your message ..."), text: $message)
                 .frame(height: 52)
                 .disableAutocorrection(true)
 
@@ -25,14 +17,14 @@ struct MessageField: View {
                 Image(systemName: "paperplane.fill")
                     .foregroundColor(.white)
                     .padding(10)
-                    .background(Color("Peach"))
-                    .cornerRadius(50)
+                    .background(Color(red: 0.6, green: 0.4, blue: 0.8))
+                    .cornerRadius(30)
             }
         }
         .padding(.horizontal)
         .padding(.vertical, 10)
         .background(Color("Gray"))
-        .cornerRadius(50)
+        .cornerRadius(5)
         .padding()
     }
 }
@@ -52,7 +44,6 @@ struct CustomTextField: View {
 
     var body: some View {
         ZStack(alignment: .leading) {
-            // If text is empty, show the placeholder on top of the TextField
             if text.isEmpty {
                 placeholder
                 .opacity(0.5)

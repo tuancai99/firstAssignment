@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  ChatApp
-//
-//  Created by Stephanie Diep on 2022-01-10.
-//
-
 import SwiftUI
 
 struct ContentView: View {
@@ -23,16 +16,15 @@ struct ContentView: View {
                     }
                     .padding(.top, 10)
                     .background(.white)
-                    .cornerRadius(30, corners: [.topLeft, .topRight]) // Custom cornerRadius modifier added in Extensions file
+                    .cornerRadius(30, corners: [.topLeft, .topRight])
                     .onChange(of: messagesManager.lastMessageId) { id in
-                        // When the lastMessageId changes, scroll to the bottom of the conversation
                         withAnimation {
                             proxy.scrollTo(id, anchor: .bottom)
                         }
                     }
                 }
             }
-            .background(Color("Peach"))
+            .background(Color(red: 0.6, green: 0.4, blue: 0.8))
             
             MessageField()
                 .environmentObject(messagesManager)

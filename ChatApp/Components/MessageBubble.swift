@@ -1,10 +1,3 @@
-//
-//  MessageBubble.swift
-//  ChatApp
-//
-//  Created by Stephanie Diep on 2022-01-11.
-//
-
 import SwiftUI
 
 struct MessageBubble: View {
@@ -16,7 +9,7 @@ struct MessageBubble: View {
             HStack {
                 Text(message.text)
                     .padding()
-                    .background(message.received ? Color("Gray") : Color("Peach"))
+                    .background(message.received ? Color("Gray") : Color(red: 0.6, green: 0.4, blue: 0.8))
                     .cornerRadius(30)
             }
             .frame(maxWidth: 300, alignment: message.received ? .leading : .trailing)
@@ -39,6 +32,6 @@ struct MessageBubble: View {
 
 struct MessageBubble_Previews: PreviewProvider {
     static var previews: some View {
-        MessageBubble(message: Message(id: "12345", text: "I've been coding applications from scratch in SwiftUI and it's so much fun!", received: true, timestamp: Date()))
+        MessageBubble(message: Message(id: "12345", text: "đây là test hihihi", received: true, timestamp: Date()))
     }
 }
